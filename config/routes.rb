@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-
-<<<<<<< HEAD
-=======
-
->>>>>>> fc7f92a1700e325efc6380e891f43ce36049d204
   # The priority is based upon order of creation: first created -> highest priority.
   #  See how all your routes lay out with "rake routes".
 
