@@ -1,7 +1,5 @@
 <h1>Welcome, We are TeamSpirit!</h1>
 
-
-
 <h2>Log In</h2>
 <br>
 <%=form_tag login_path do %>
@@ -14,5 +12,12 @@
 
 <!-- Or, Sign Up -->
 <!-- SignUp Form Here -->
-<%=form_tag 
-
+<%= form_for @user do |f| %>
+<%= f.label :username %>
+<%= f.text_field :username %>
+<%= f.label :email%>
+<%= f.text_field :email%>
+<%= f.label :password%>
+<%= f.password_field :password%>
+<%=f.submit :create %>
+<% end %>
