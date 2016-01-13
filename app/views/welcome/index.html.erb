@@ -1,3 +1,18 @@
 <h1>Welcome, We are TeamSpirit!</h1>
 
 <link rel="stylesheet" type="text/.scss" href="welcome.scss">
+
+<h2>Log In</h2>
+<br>
+<%=form_tag login_path do %>
+<%=label_tag(:username)%>
+<%=text_field_tag(:username)%>
+<%=label_tag(:password)%>
+<%=password_field_tag(:password)%>
+<%=submit_tag "Log In"%>
+<%end%>
+
+<!-- Or, Sign Up -->
+<!-- SignUp Form Here -->
+<%=form_tag 
+
