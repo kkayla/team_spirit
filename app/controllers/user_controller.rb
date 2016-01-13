@@ -1,5 +1,6 @@
 class UserController < ApplicationController
 
+
 	def new
 		@user=User.new
 	end
@@ -31,7 +32,3 @@ end
 # def user_params
 # 		params.require(:user).permit(:username, :password)
 # end
-
-rails g model comments 
-t.references :user, index: true, foreign_key:
-t.references :post, index: true, foreign_key:
