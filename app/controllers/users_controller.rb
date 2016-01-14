@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
 	def index
 	end
 
@@ -7,7 +8,6 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		puts params.inspect
 		@user = User.new(user_params)
 	  if @user.save
 			session[:user_id]= @user.id
@@ -17,8 +17,12 @@ class UsersController < ApplicationController
 	  end
 	end
 
+	def current_user
+	end
+
 	def show
 		@user=User.find(params[:id])
+		@posts = Post.each 
 	end
 
 	def edit
@@ -41,9 +45,8 @@ class UsersController < ApplicationController
 		session.destroy
 
 	 redirect_to users_path
-	end
+ end
 
-	private
 	def user_params
 		params.require(:user).permit(:username, :password, :email)
 	end
