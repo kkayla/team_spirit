@@ -1,9 +1,10 @@
 class ApplicationController < ActionController::Base
-  before_filter :set_user
+  before_filter :current_user
 
   protected
-    def set_user
+    def current_user
       @user = User.find(session[:id]) if @user.nil? && session[:id]
+    # redirect_to(new_user_path) unless current_user
     end
 
     def login_required

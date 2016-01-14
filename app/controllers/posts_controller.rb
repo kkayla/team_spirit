@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 end
 
 
+
 # private
 # def post_params
 # 	params.require(:post).permit(:body)
@@ -20,3 +21,4 @@ end
 # private
 # def comment_params
 # 	params.require(:comment).permit(:content)
+# end
