@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
 	end
 
 	def create
+
 		@user=User.where(username: params[:username]).first
 
 		if @user && @user.password == params[:password]
@@ -10,7 +11,7 @@ class SessionsController < ApplicationController
 #A session has been created for that user
 			redirect_to user_path(@user)
 		else
-			redirect_to login_path
+			redirect_to root_path
 		end
 	end
 
