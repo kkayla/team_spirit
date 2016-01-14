@@ -12,13 +12,16 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
 
+  get '/posts/new', to:  'posts#new'
+  get '/posts/:id', to:  'posts#show'
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
   # get '/user' => 'user#show'
   # post'/users' => 'user#show'
   # get '/user/:id' => 'user#show'
   # get '/users/new' => 'user#new'
-
+  
 
 
   # Example resource route (maps HTTP verbs to controller actions automatically):

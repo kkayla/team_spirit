@@ -21,3 +21,10 @@
 <%= f.password_field :password%>
 <%=f.submit :create %>
 <% end %>
+<!-- This page would also hold any login error messages from validation failures:
+<%# if @user.errors.full_messages.any?%>
+<ul>
+<%# @user.errors.full_messages.each do |error| %> List each error
+<li><%#=error_message%></li><br>/>
+<#% end %>
+-->
