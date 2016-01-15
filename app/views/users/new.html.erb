@@ -1,0 +1,10 @@
+<h1>You've joined our cult, <%=@user.username%>!</h1>
+
+<br>
+<%#= link_to "Edit Your Account", edit_user_path(@user)%>
+<!-- <h3>Edit Your Account</h3> <p>(link to users/views/edit.html.erb)</p> -->
+<%= link_to "Delete You Account", @user, method: :delete %>
+<br>
+<%= link_to "Create a Post", new_post_path(@post)%>
+<!-- <h3>Create a Post </h3>(link to posts/views/new.html.erb)(the posts/views/new.html.erb has a link to see the single post on posts/views/show.html.erb) -->
+<h3>See your Feed</h3>(link to posts/views/index.html.erb)
