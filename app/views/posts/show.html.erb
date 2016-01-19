@@ -1,5 +1,6 @@
-<h2><%= @Post.title %></h2>
-  <p><%= @Post.date %></p>
-  <p><%= @Post.contents %></p>
-<p>
+<h2><%= @post.body %></h2>
+  <p><%= @post.user.username %></p>
 <h1>Show A Single Post</h1>
+<h3><%= link_to("back to all posts", posts_path) %></h3>
+<h4><%= link_to("new post", new_post_path) %></h4>
+<%= link_to 'delete', post_path(@post), method: :delete, data: { confirm: "Are you sure?" } %>

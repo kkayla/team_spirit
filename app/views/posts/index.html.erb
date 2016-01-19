@@ -1,1 +1,5 @@
-<%= @Post.all%>
+<h1>list all posts</h1>
+<% @posts.each do |post| %>
+<h2><%= link_to "#{post.body}", post_path(post) %></h2>
+<% end %>
+</table>

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
 	def index
+		@users = User.all
 	end
 
 	def new
@@ -9,33 +10,25 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		puts params.inspect
-			@user=User.where(username: params[:username]).first
-		if @user && @user.password && @user.email == params[:password] && params[:email]
-			session[:user_id]= @user_id
-#A session has been created for that user
-			redirect_to user_path(@user)
-		else
-			redirect_to root_path
-		# end
-		# @user = User.new(user_params)
-		# # if user params aren't nil, save @user
-	 #  if @user.save
-		# 	session[:user_id]= @user.id
-	 #    redirect_to @user
-	 #  else
-	 #  	redirect_to new_user_path
+		@user = User.create(user_params)
+		# if user params aren't nil, save @user
+	  if @user.save
+			session[:user_id]= @user.id
+	    redirect_to users_path
+	  else
+	  	redirect_to new_user_path
 	  end
 	end
 
 	def current_user
+		@current_user = session[:user_id]
 	end
 
+
 	def show
-		@user=User.find(params[:id])
-		@posts = Post.all
-		# @posts = Post.each
-	end
+	        @user=User.find(params[:id])
+	        @posts = Post.where(user_id: @user.id)
+	    end
 
 	def edit
 		@user = User.find(params[:id])

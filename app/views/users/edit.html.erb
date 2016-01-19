@@ -1,1 +1,11 @@
-<h1>Update or delete your account</h1>
+<h1>Update or delete your account" <%= @user.username %></h1>
+<%= form_for @user do |form| %>
+<%= form.label @user :username %>
+<%= form.text_field :username, placeholder: @user.username %>
+<%= form.label @user :email %>
+<%= form.text_field :email, placeholder: @user.email %>
+<%= form.label @user :password %>
+<%= form.text_field @user :password, placeholder: @user.password %>
+<%= form.submit "save changes" %>
+</form>
+<% end %>
